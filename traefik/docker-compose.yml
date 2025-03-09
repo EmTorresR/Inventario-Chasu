@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+  traefik:
+    image: traefik:v2.9
+    container_name: traefik
+    command:
+      # Habilitamos el proveedor Docker
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      # Definimos dos entrypoints: uno para HTTP y otro para HTTPS
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      # Configuración de Let's Encrypt (cert resolver)
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.myresolver.acme.email=tu-newyozhy@gmail.com"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Necesario para que Traefik pueda comunicarse con Docker
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      # Almacenamiento para certificados Let's Encrypt
+      - "./letsencrypt:/letsencrypt"
+
+  client:
+    image: ghcr.io/emtorresr/inventario-chasu-client:latest
+    container_name: inventario-chasu-client
+    labels:
+      - "traefik.enable=true"
+      # Redirige tráfico basado en el Host; reemplaza tudominio.com por tu dominio real
+      - "traefik.http.routers.client.rule=Host(`inventario-chasu.duckdns.org`)"
+      - "traefik.http.routers.client.entrypoints=websecure"
+      - "traefik.http.routers.client.tls.certresolver=myresolver"
+    expose:
+      - "5173"  # Aunque Traefik se encargue del mapeo, exponemos el puerto interno
+
+  server:
+    image: ghcr.io/emtorresr/inventario-chasu-server:latest
+    container_name: inventario-chasu-server
+    labels:
+      - "traefik.enable=true"
+      # Si deseas usar un subdominio para el API; reemplaza api.tudominio.com por tu dominio
+      - "traefik.http.routers.server.rule=Host(`api.inventario-chasu.duckdns.org`)"
+      - "traefik.http.routers.server.entrypoints=websecure"
+      - "traefik.http.routers.server.tls.certresolver=myresolver"
+    expose:
+      - "5000"
+
