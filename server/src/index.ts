@@ -1,3 +1,4 @@
+// server/src/index.ts
 import express from 'express';
 import sequelize from './config/database';
 import './models/Configuration';
@@ -45,15 +46,26 @@ app.use('/api/product-variants', productVariantsRoutes);
 // Rutas de integración con Alegra
 app.use('/api/alegra', alegraRoutes);
 
+// Conexión con base de datos
 sequelize.sync({ alter: true })
   .then(() => console.log('Modelos sincronizados'))
-  .catch((err) => console.error('Error sincronizando modelos:', err));
+  .catch((err: Error) => console.error('Error sincronizando modelos:', err));
 
-  app.get('/', (req, res) => {
-    res.send('🚀 Backend corriendo correctamente');
-  });
-  
+// Ruta principal
+app.get('/', (req, res) => {
+  res.send('🚀 Backend corriendo correctamente');
+});
 
+// Iniciar servidor
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://0.0.0.0:${port}`);
+});
+
+// Manejo de errores no capturados
+process.on('uncaughtException', (err: Error) => {
+  console.error('Excepción no capturada:', err);
+});
+
+process.on('unhandledRejection', (reason: unknown) => {
+  console.error('Rechazo no manejado:', reason);
 });
