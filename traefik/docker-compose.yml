@@ -5,13 +5,10 @@ services:
     image: traefik:v2.9
     container_name: traefik
     command:
-      # Habilitamos el proveedor Docker
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      # Definimos dos entrypoints: uno para HTTP y otro para HTTPS
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
-      # Configuración de Let's Encrypt (cert resolver)
       - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
       - "--certificatesresolvers.myresolver.acme.email=tu-newyozhy@gmail.com"
       - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
@@ -19,9 +16,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      # Necesario para que Traefik pueda comunicarse con Docker
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      # Almacenamiento para certificados Let's Encrypt
       - "./letsencrypt:/letsencrypt"
 
   client:
@@ -29,22 +24,43 @@ services:
     container_name: inventario-chasu-client
     labels:
       - "traefik.enable=true"
-      # Redirige tráfico basado en el Host; reemplaza tudominio.com por tu dominio real
       - "traefik.http.routers.client.rule=Host(`inventario-chasu.duckdns.org`)"
       - "traefik.http.routers.client.entrypoints=websecure"
       - "traefik.http.routers.client.tls.certresolver=myresolver"
     expose:
-      - "5173"  # Aunque Traefik se encargue del mapeo, exponemos el puerto interno
+      - "5173"
 
   server:
     image: ghcr.io/emtorresr/inventario-chasu-server:latest
     container_name: inventario-chasu-server
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: chasu
+      DB_PASSWORD: chasu123
+      DB_NAME: inventario
     labels:
       - "traefik.enable=true"
-      # Si deseas usar un subdominio para el API; reemplaza api.tudominio.com por tu dominio
       - "traefik.http.routers.server.rule=Host(`api.inventario-chasu.duckdns.org`)"
       - "traefik.http.routers.server.entrypoints=websecure"
       - "traefik.http.routers.server.tls.certresolver=myresolver"
     expose:
       - "5000"
+    depends_on:
+      - mysql
 
+  mysql:
+    image: mysql:8.0
+    container_name: inventario-chasu-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: inventario
+      MYSQL_USER: chasu
+      MYSQL_PASSWORD: chasu123
+    volumes:
+      - mysql-data:/var/lib/mysql
+    expose:
+      - "3306"
+
+volumes:
+  mysql-data:
