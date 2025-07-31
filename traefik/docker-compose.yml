@@ -29,6 +29,8 @@ services:
       - "traefik.http.routers.client.tls.certresolver=myresolver"
     expose:
       - "5173"
+    ports:
+      - "5173:5173"  # Puerto mapeado para acceder directamente en local/PWD
 
   server:
     image: ghcr.io/emtorresr/inventario-chasu-server:latest
@@ -46,6 +48,8 @@ services:
       - "traefik.http.routers.server.tls.certresolver=myresolver"
     expose:
       - "5000"
+    ports:
+      - "5000:5000"  # Puerto mapeado para acceso local/PWD
     depends_on:
       - mysql
 
