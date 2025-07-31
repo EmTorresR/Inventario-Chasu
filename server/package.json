@@ -14,11 +14,14 @@
     "@api/alegraswagger-test": "file:.api/apis/alegraswagger-test",
     "dotenv": "^16.5.0",
     "express": "^4.21.2",
-    "qrcode": "^1.5.4"
+    "mysql2": "^3.14.3",
+    "qrcode": "^1.5.4",
+    "sequelize": "^6.37.7"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/qrcode": "^1.5.5",
+    "@types/sequelize": "^4.28.20",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.2"
   }
