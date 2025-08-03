@@ -8,7 +8,8 @@ export default defineConfig({
     react()
   ],
   server: {
-    host: true,
-    allowedHosts: ['inventario-chasu.duckdns.org'],
+    host: true, // permite conexiones externas
+    port: 5173,
+    allowedHosts: true, // <--- permite cualquier host
   },
 });
