@@ -1,6 +1,8 @@
 // server/src/index.ts
 import express from 'express';
+import cors from 'cors'; // ✅ 1. Importar cors
 import sequelize from './config/database';
+
 import './models/Configuration';
 import './models/Product';
 import './models/ProductVariant';
@@ -21,6 +23,9 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
+
+// ✅ 2. Habilitar CORS para cualquier origen (desarrollo)
+app.use(cors());
 
 // Rutas de configuración
 app.use('/api/config', configRoutes);

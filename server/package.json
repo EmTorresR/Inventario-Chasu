@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "@api/alegraswagger-test": "file:.api/apis/alegraswagger-test",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^4.21.2",
     "mysql2": "^3.14.3",
@@ -19,6 +20,7 @@
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
     "@types/qrcode": "^1.5.5",
     "@types/sequelize": "^4.28.20",
