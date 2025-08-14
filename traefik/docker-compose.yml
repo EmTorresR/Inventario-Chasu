@@ -19,27 +19,6 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./letsencrypt:/letsencrypt"
 
-      version: '3.7'
-
-services:
-  traefik:
-    image: traefik:v2.9
-    container_name: traefik
-    command:
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
-      - "--certificatesresolvers.myresolver.acme.email=tu-newyozhy@gmail.com"
-      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./letsencrypt:/letsencrypt"
-
   client:
     image: ghcr.io/emtorresr/inventario-chasu-client:latest
     container_name: inventario-chasu-client
@@ -71,44 +50,6 @@ services:
       - "5000"
     ports:
       - "5000:5000"
-    depends_on:
-      - mysql
-
-  mysql:
-    image: mysql:8.0
-    container_name: inventario-chasu-mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: inventario
-      MYSQL_USER: chasu
-      MYSQL_PASSWORD: chasu123
-    volumes:
-      - mysql-data:/var/lib/mysql
-    expose:
-      - "3306"
-
-volumes:
-  mysql-data:
-
-
-    server:
-    image: ghcr.io/emtorresr/inventario-chasu-server:latest
-    container_name: inventario-chasu-server
-    environment:
-      DB_HOST: mysql
-      DB_PORT: 3306
-      DB_USER: chasu
-      DB_PASSWORD: chasu123
-      DB_NAME: inventario
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.server.rule=Host(`api.inventario-chasu.duckdns.org`)"
-      - "traefik.http.routers.server.entrypoints=websecure"
-      - "traefik.http.routers.server.tls.certresolver=myresolver"
-    expose:
-      - "5000"
-    ports:
-      - "5000:5000"  # Puerto mapeado para acceso local/PWD
     depends_on:
       - mysql
 
