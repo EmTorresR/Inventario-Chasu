@@ -19,7 +19,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./letsencrypt:/letsencrypt"
 
-  client:
+      client:
     image: ghcr.io/emtorresr/inventario-chasu-client:latest
     container_name: inventario-chasu-client
     labels:
@@ -32,7 +32,7 @@ services:
     ports:
       - "5173:5173"  # Puerto mapeado para acceder directamente en local/PWD
 
-  server:
+    server:
     image: ghcr.io/emtorresr/inventario-chasu-server:latest
     container_name: inventario-chasu-server
     environment:

@@ -1,19 +1,17 @@
 // server/src/index.ts
 import express from 'express';
-import cors from 'cors'; // ✅ 1. Importar cors
+import cors from 'cors';
 import sequelize from './config/database';
 
-import './models/Configuration';
-import './models/Product';
-import './models/ProductVariant';
+// Importar modelos y definir asociaciones
+import './models';
 
-// Importar controladores
-import { obtenerProductos, crearProducto, actualizarProducto } from './controllers/productosController';
+// Importar controladores que se usan directamente en este archivo
 import { crearProductVariant, obtenerProductVariants, actualizarProductVariant } from './controllers/productVariantsController';
 import { bulkUpdateStock } from './controllers/stockController';
 import { importProducts } from './controllers/importController';
 
-// Importar rutas
+// Importar todos los manejadores de rutas
 import alegraRoutes from './routes/alegraRoutes';
 import configRoutes from './routes/configRoutes';
 import productosRoutes from './routes/productosRoutes';
@@ -23,50 +21,37 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
-
-// ✅ 2. Habilitar CORS para cualquier origen (desarrollo)
 app.use(cors());
 
-// Rutas de configuración
+// Usar los manejadores de rutas
 app.use('/api/config', configRoutes);
+app.use('/api/productos', productosRoutes); // Manejador principal para productos
+app.use('/api/product-variants', productVariantsRoutes);
+app.use('/api/alegra', alegraRoutes);
 
-// Rutas de productos
-app.get('/api/productos', obtenerProductos);
-app.post('/api/productos', crearProducto);
-app.put('/api/productos/:id', actualizarProducto);
-
-// Rutas de variantes de producto
+// Rutas específicas que no están en los manejadores principales
 app.get('/api/productos/:productId/variants', obtenerProductVariants);
 app.post('/api/productos/:productId/variants', crearProductVariant);
 app.put('/api/variants/:id', actualizarProductVariant);
-
-// Ruta para actualización masiva de stock
 app.post('/api/stock/bulk-update', bulkUpdateStock);
-
-// Ruta para importar productos
 app.post('/api/import-products', importProducts);
-app.use('/api/productos', productosRoutes);
-app.use('/api/product-variants', productVariantsRoutes);
 
-// Rutas de integración con Alegra
-app.use('/api/alegra', alegraRoutes);
-
-// Conexión con base de datos
+// Sincronizar base de datos y arrancar servidor
 sequelize.sync({ alter: true })
-  .then(() => console.log('Modelos sincronizados'))
-  .catch((err: Error) => console.error('Error sincronizando modelos:', err));
+  .then(() => {
+    console.log('Modelos sincronizados con la base de datos.');
+    app.listen(port, () => {
+      console.log(`Servidor corriendo en http://0.0.0.0:${port}`);
+    });
+  })
+  .catch((err: Error) => console.error('Error al sincronizar modelos:', err));
 
-// Ruta principal
+// Ruta principal de bienvenida
 app.get('/', (req, res) => {
   res.send('🚀 Backend corriendo correctamente');
 });
 
-// Iniciar servidor
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://0.0.0.0:${port}`);
-});
-
-// Manejo de errores no capturados
+// Manejadores de errores globales
 process.on('uncaughtException', (err: Error) => {
   console.error('Excepción no capturada:', err);
 });
