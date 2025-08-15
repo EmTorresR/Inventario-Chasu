@@ -1,0 +1,811 @@
+Run docker/build-push-action@v4
+GitHub Actions runtime token ACs
+Docker info
+Proxy configuration
+Buildx version
+/usr/bin/docker buildx build --file ./client/Dockerfile --iidfile /tmp/docker-actions-toolkit-q9eHMQ/iidfile --tag ghcr.io/emtorresr/inventario-chasu-client:latest --metadata-file /tmp/docker-actions-toolkit-q9eHMQ/metadata-file --push ./client
+#0 building with "builder-b0d4fbf2-8212-4de7-82f9-8c26e22d28e8" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 939B done
+#1 DONE 0.0s
+
+#2 [auth] library/node:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [auth] library/nginx:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/node:18-alpine
+#4 ...
+
+#5 [internal] load metadata for docker.io/library/nginx:stable-alpine
+#5 DONE 0.5s
+
+#4 [internal] load metadata for docker.io/library/node:18-alpine
+#4 DONE 0.6s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [build 1/6] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#7 resolve docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e done
+#7 DONE 0.0s
+
+#8 [stage-1 1/2] FROM docker.io/library/nginx:stable-alpine@sha256:8757e9607e9d2c294bd64d242b4702bffe19f488c82b57de4650db493d19b639
+#8 resolve docker.io/library/nginx:stable-alpine@sha256:8757e9607e9d2c294bd64d242b4702bffe19f488c82b57de4650db493d19b639 done
+#8 ...
+
+#9 [internal] load build context
+#9 transferring context: 677.01kB 0.0s done
+#9 DONE 0.0s
+
+#8 [stage-1 1/2] FROM docker.io/library/nginx:stable-alpine@sha256:8757e9607e9d2c294bd64d242b4702bffe19f488c82b57de4650db493d19b639
+#8 sha256:f2d0d37ae31d4ab6192eeea9aaf8c1c83664db1db36cb22c98fd2fd259c1542c 1.40kB / 1.40kB 0.1s done
+#8 sha256:8485f215491f7b3eccbb9a4c66ebb932c076fa9d17aa985155b6c57e132c2042 1.21kB / 1.21kB 0.1s done
+#8 sha256:e585282f42862920f33200111c879a44e860b5848afce1246fdcd321700641d0 5.24MB / 15.51MB 0.2s
+#8 sha256:62c31b33012d33aa0a2fe15793525a9d6d6bf9c57f1f9ec22b88a02f869b1c3e 954B / 954B 0.1s done
+#8 sha256:85a0985bea3a96919f3334aeec7cec165a06ffc948c8de0418026c0d516c7016 404B / 404B 0.1s done
+#8 sha256:95be0f4718a48e45cacbaf6e19f7aed48101465aca88a577bd84a57ee42eba1b 628B / 628B 0.1s done
+#8 sha256:669998b1fdf4ad752e6d1b278e90c3634ca699b0394fc3fe7342e72d404223d1 1.79MB / 1.79MB 0.1s done
+#8 sha256:e585282f42862920f33200111c879a44e860b5848afce1246fdcd321700641d0 15.51MB / 15.51MB 0.5s
+#8 sha256:0368fd46e3c6d237d81390ff086f93aee216df5cfa814041a491453fb0932a12 2.10MB / 3.64MB 0.2s
+#8 sha256:e585282f42862920f33200111c879a44e860b5848afce1246fdcd321700641d0 15.51MB / 15.51MB 0.5s done
+#8 sha256:0368fd46e3c6d237d81390ff086f93aee216df5cfa814041a491453fb0932a12 3.64MB / 3.64MB 0.3s done
+#8 extracting sha256:0368fd46e3c6d237d81390ff086f93aee216df5cfa814041a491453fb0932a12 0.1s done
+#8 DONE 0.7s
+
+#7 [build 1/6] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#7 sha256:25ff2da83641908f65c3a74d80409d6b1b62ccfaab220b9ea70b80df5a2e0549 446B / 446B 0.1s done
+#7 sha256:1e5a4c89cee5c0826c540ab06d4b6b491c96eda01837f430bd47f0d26702d6e3 1.26MB / 1.26MB 0.1s done
+#7 sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 3.64MB / 3.64MB 0.2s done
+#7 sha256:dd71dde834b5c203d162902e6b8994cb2309ae049a0eabc4efea161b2b5a3d0e 40.01MB / 40.01MB 0.6s done
+#7 extracting sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870 0.1s done
+#7 extracting sha256:dd71dde834b5c203d162902e6b8994cb2309ae049a0eabc4efea161b2b5a3d0e
+#7 ...
+
+#8 [stage-1 1/2] FROM docker.io/library/nginx:stable-alpine@sha256:8757e9607e9d2c294bd64d242b4702bffe19f488c82b57de4650db493d19b639
+#8 extracting sha256:669998b1fdf4ad752e6d1b278e90c3634ca699b0394fc3fe7342e72d404223d1 0.1s done
+#8 DONE 0.9s
+
+#8 [stage-1 1/2] FROM docker.io/library/nginx:stable-alpine@sha256:8757e9607e9d2c294bd64d242b4702bffe19f488c82b57de4650db493d19b639
+#8 extracting sha256:95be0f4718a48e45cacbaf6e19f7aed48101465aca88a577bd84a57ee42eba1b done
+#8 extracting sha256:62c31b33012d33aa0a2fe15793525a9d6d6bf9c57f1f9ec22b88a02f869b1c3e done
+#8 extracting sha256:85a0985bea3a96919f3334aeec7cec165a06ffc948c8de0418026c0d516c7016 done
+#8 extracting sha256:8485f215491f7b3eccbb9a4c66ebb932c076fa9d17aa985155b6c57e132c2042 done
+#8 extracting sha256:f2d0d37ae31d4ab6192eeea9aaf8c1c83664db1db36cb22c98fd2fd259c1542c done
+#8 extracting sha256:e585282f42862920f33200111c879a44e860b5848afce1246fdcd321700641d0
+#8 extracting sha256:e585282f42862920f33200111c879a44e860b5848afce1246fdcd321700641d0 0.3s done
+#8 DONE 1.2s
+
+#7 [build 1/6] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#7 extracting sha256:dd71dde834b5c203d162902e6b8994cb2309ae049a0eabc4efea161b2b5a3d0e 1.0s done
+#7 DONE 1.6s
+
+#7 [build 1/6] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+#7 extracting sha256:1e5a4c89cee5c0826c540ab06d4b6b491c96eda01837f430bd47f0d26702d6e3 0.0s done
+#7 extracting sha256:25ff2da83641908f65c3a74d80409d6b1b62ccfaab220b9ea70b80df5a2e0549 done
+#7 DONE 1.6s
+
+#10 [build 2/6] WORKDIR /app
+#10 DONE 0.2s
+
+#11 [build 3/6] COPY package*.json ./
+#11 DONE 0.0s
+
+#12 [build 4/6] RUN npm install
+#12 0.744 npm warn EBADENGINE Unsupported engine {
+#12 0.744 npm warn EBADENGINE   package: 'react-router@7.5.3',
+#12 0.744 npm warn EBADENGINE   required: { node: '>=20.0.0' },
+#12 0.744 npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+#12 0.744 npm warn EBADENGINE }
+#12 0.745 npm warn EBADENGINE Unsupported engine {
+#12 0.745 npm warn EBADENGINE   package: 'react-router-dom@7.5.3',
+#12 0.745 npm warn EBADENGINE   required: { node: '>=20.0.0' },
+#12 0.745 npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+#12 0.745 npm warn EBADENGINE }
+#12 9.378 
+#12 9.378 added 305 packages, and audited 306 packages in 9s
+#12 9.379 
+#12 9.379 57 packages are looking for funding
+#12 9.379   run `npm fund` for details
+#12 9.388 
+#12 9.388 5 vulnerabilities (3 low, 1 moderate, 1 critical)
+#12 9.388 
+#12 9.388 To address all issues, run:
+#12 9.388   npm audit fix
+#12 9.388 
+#12 9.388 Run `npm audit` for details.
+#12 9.389 npm notice
+#12 9.389 npm notice New major version of npm available! 10.8.2 -> 11.5.2
+#12 9.389 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.5.2
+#12 9.389 npm notice To update run: npm install -g npm@11.5.2
+#12 9.389 npm notice
+#12 DONE 10.2s
+
+#13 [build 5/6] COPY . .
+#13 DONE 0.2s
+
+#14 [build 6/6] RUN npm run build
+#14 0.224 
+#14 0.224 > client@0.0.0 build
+#14 0.224 > tsc -b && vite build
+#14 0.224 
+#14 4.153 node_modules/@swc/core/binding.d.ts(9,43): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.153 node_modules/@swc/core/binding.d.ts(15,38): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.154 node_modules/@swc/core/binding.d.ts(15,52): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.154 node_modules/@swc/core/binding.d.ts(17,42): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.154 node_modules/@swc/core/binding.d.ts(17,56): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.154 node_modules/@swc/core/binding.d.ts(25,53): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.154 node_modules/@swc/core/binding.d.ts(27,58): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.154 node_modules/@swc/core/binding.d.ts(29,59): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.154 node_modules/@swc/core/binding.d.ts(31,54): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.155 node_modules/@swc/core/binding.d.ts(33,61): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.155 node_modules/@swc/core/binding.d.ts(35,61): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.155 node_modules/@swc/core/binding.d.ts(37,76): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.156 node_modules/@swc/core/binding.d.ts(39,80): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.156 node_modules/@swc/core/binding.d.ts(41,79): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.156 node_modules/@swc/core/binding.d.ts(55,75): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.162 node_modules/@types/babel__template/index.d.ts(11,28): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.170 node_modules/@types/babel__traverse/index.d.ts(63,15): error TS2583: Cannot find name 'WeakMap'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.170 node_modules/@types/babel__traverse/index.d.ts(63,31): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.170 node_modules/@types/babel__traverse/index.d.ts(64,16): error TS2583: Cannot find name 'WeakMap'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.170 node_modules/@types/babel__traverse/index.d.ts(90,13): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.177 node_modules/@types/react/index.d.ts(46,7): error TS2304: Cannot find name 'Iterable'.
+#14 4.178 node_modules/@types/react/index.d.ts(426,10): error TS2456: Type alias 'ReactNode' circularly references itself.
+#14 4.178 node_modules/@types/react/index.d.ts(431,11): error TS2304: Cannot find name 'Iterable'.
+#14 4.180 node_modules/postcss/lib/lazy-result.d.ts(53,38): error TS2339: Property 'finally' does not exist on type 'Promise<Result_<RootNode>>'.
+#14 4.180 node_modules/postcss/lib/lazy-result.d.ts(143,8): error TS2585: 'Symbol' only refers to a type, but is being used as a value here. Do you need to change your target library? Try changing the 'lib' compiler option to es2015 or later.
+#14 4.181 node_modules/postcss/lib/no-work-result.d.ts(27,34): error TS2339: Property 'finally' does not exist on type 'Promise<Result_<Root_>>'.
+#14 4.181 node_modules/postcss/lib/no-work-result.d.ts(36,8): error TS2585: 'Symbol' only refers to a type, but is being used as a value here. Do you need to change your target library? Try changing the 'lib' compiler option to es2015 or later.
+#14 4.182 node_modules/rollup/dist/rollup.d.ts(248,22): error TS2304: Cannot find name 'IterableIterator'.
+#14 4.182 node_modules/rollup/dist/rollup.d.ts(581,22): error TS2304: Cannot find name 'IterableIterator'.
+#14 4.182 node_modules/rollup/dist/rollup.d.ts(925,2): error TS1169: A computed property name in an interface must refer to an expression whose type is a literal type or a 'unique symbol' type.
+#14 4.182 node_modules/rollup/dist/rollup.d.ts(925,3): error TS2585: 'Symbol' only refers to a type, but is being used as a value here. Do you need to change your target library? Try changing the 'lib' compiler option to es2015 or later.
+#14 4.186 node_modules/vite/dist/node/index.d.ts(1,23): error TS2688: Cannot find type definition file for 'node'.
+#14 4.186 node_modules/vite/dist/node/index.d.ts(5,41): error TS2307: Cannot find module 'rollup/parseAst' or its corresponding type declarations.
+#14 4.186   There are types at '/app/node_modules/rollup/dist/parseAst.d.ts', but this result could not be resolved under your current 'moduleResolution' setting. Consider updating to 'node16', 'nodenext', or 'bundler'.
+#14 4.186 node_modules/vite/dist/node/index.d.ts(6,23): error TS2307: Cannot find module 'node:http' or its corresponding type declarations.
+#14 4.186 node_modules/vite/dist/node/index.d.ts(7,119): error TS2307: Cannot find module 'node:http' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(8,35): error TS2307: Cannot find module 'node:http2' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(9,21): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(10,25): error TS2307: Cannot find module 'node:events' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(11,30): error TS2307: Cannot find module 'node:events' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(12,76): error TS2307: Cannot find module 'node:https' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(13,22): error TS2307: Cannot find module 'node:net' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(14,22): error TS2307: Cannot find module 'node:url' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(15,21): error TS2307: Cannot find module 'node:url' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(16,25): error TS2307: Cannot find module 'node:stream' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(17,39): error TS2307: Cannot find module 'node:stream' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(26,38): error TS2307: Cannot find module 'node:tls' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(27,29): error TS2307: Cannot find module 'node:zlib' or its corresponding type declarations.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(311,35): error TS2503: Cannot find namespace 'NodeJS'.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(393,11): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1064,16): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1065,22): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1066,22): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1067,25): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1068,23): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1068,35): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1087,21): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1088,20): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1089,22): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1090,23): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.187 node_modules/vite/dist/node/index.d.ts(1090,35): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.195 node_modules/vite/dist/node/index.d.ts(1094,37): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1097,57): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1108,67): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1108,122): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1108,134): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1108,172): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1108,226): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1109,16): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1124,86): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1125,64): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1137,22): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1138,34): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1139,31): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1140,28): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1141,28): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1142,31): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1143,29): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1143,41): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1158,21): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1159,20): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1160,22): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1161,23): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1161,35): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1169,37): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1172,46): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1369,40): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1439,55): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1457,39): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1474,55): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1492,39): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1509,55): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1527,39): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1544,38): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1556,56): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1565,38): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1577,59): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1592,18): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1592,41): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1597,24): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1597,47): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1602,39): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1602,48): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1633,25): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1664,24): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1664,33): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1713,18): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1735,14): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1744,20): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(1874,14): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(2477,21): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(2548,63): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(2829,17): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(2847,16): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(2890,16): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(3517,12): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(4161,12): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/index.d.ts(4196,84): error TS2580: Cannot find name 'Buffer'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(31,27): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(48,20): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(49,17): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(50,15): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(51,14): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(53,24): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(230,16): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(231,14): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(241,29): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(242,32): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(242,44): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(243,32): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/dist/node/module-runner.d.ts(258,37): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/types/hot.d.ts(4,3): error TS1170: A computed property name in a type literal must refer to an expression whose type is a literal type or a 'unique symbol' type.
+#14 4.197 node_modules/vite/types/hot.d.ts(4,4): error TS2585: 'Symbol' only refers to a type, but is being used as a value here. Do you need to change your target library? Try changing the 'lib' compiler option to es2015 or later.
+#14 4.197 node_modules/vite/types/metadata.d.ts(2,19): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 node_modules/vite/types/metadata.d.ts(3,16): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 4.197 vite.config.ts(3,25): error TS2307: Cannot find module '@tailwindcss/vite' or its corresponding type declarations.
+#14 4.197   There are types at '/app/node_modules/@tailwindcss/vite/dist/index.d.mts', but this result could not be resolved under your current 'moduleResolution' setting. Consider updating to 'node16', 'nodenext', or 'bundler'.
+#14 11.74 error TS2468: Cannot find global value 'Promise'.
+#14 11.74 node_modules/@ant-design/cssinjs-utils/lib/util/calc/CSSCalculator.d.ts(4,21): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.74 node_modules/@ant-design/cssinjs-utils/lib/util/calc/CSSCalculator.d.ts(6,76): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.74 node_modules/@ant-design/cssinjs-utils/lib/util/calc/index.d.ts(4,61): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@ant-design/cssinjs-utils/lib/util/genStyleUtils.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/@ant-design/cssinjs-utils/lib/util/statistic.d.ts(17,11): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@ant-design/cssinjs/lib/Cache.d.ts(9,12): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@ant-design/cssinjs/lib/theme/calc/CSSCalculator.d.ts(4,21): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@ant-design/cssinjs/lib/theme/calc/CSSCalculator.d.ts(6,76): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@ant-design/cssinjs/lib/theme/calc/index.d.ts(4,61): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@rc-component/color-picker/lib/ColorPicker.d.ts(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/@rc-component/color-picker/lib/components/ColorBlock.d.ts(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/@rc-component/qrcode/lib/QRCodeCanvas.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/@rc-component/qrcode/lib/QRCodeSVG.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/@types/babel__template/index.d.ts(11,28): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@types/babel__traverse/index.d.ts(63,15): error TS2583: Cannot find name 'WeakMap'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@types/babel__traverse/index.d.ts(63,31): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@types/babel__traverse/index.d.ts(64,16): error TS2583: Cannot find name 'WeakMap'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@types/babel__traverse/index.d.ts(90,13): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/@types/react/index.d.ts(46,7): error TS2304: Cannot find name 'Iterable'.
+#14 11.75 node_modules/@types/react/index.d.ts(426,10): error TS2456: Type alias 'ReactNode' circularly references itself.
+#14 11.75 node_modules/@types/react/index.d.ts(431,11): error TS2304: Cannot find name 'Iterable'.
+#14 11.75 node_modules/antd/es/_util/hooks/useClosable.d.ts(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/_util/type.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/affix/index.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/app/App.d.ts(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/app/context.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/button/button.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/button/buttonHelpers.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/checkbox/GroupContext.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/color-picker/ColorPicker.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/color-picker/interface.d.ts(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/config-provider/defaultRenderEmpty.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/descriptions/DescriptionsContext.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/flex/index.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/flex/interface.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/float-button/BackTop.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/float-button/FloatButton.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/float-button/FloatButtonGroup.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/float-button/interface.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/input/Input.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/list/Item.d.ts(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/list/context.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/message/index.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/modal/interface.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/modal/style/index.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/notification/index.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/notification/useNotification.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/qr-code/index.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/slider/index.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/slider/index.d.ts(104,51): error TS2344: Type '"range"' does not satisfy the constraint 'never'.
+#14 11.75 node_modules/antd/es/space/context.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/splitter/Panel.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/splitter/Splitter.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/table/hooks/useSelection.d.ts(19,201): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/antd/es/tag/style/index.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/theme/context.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/tour/index.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/transfer/index.d.ts(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/transfer/list.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/tree/Tree.d.ts(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/antd/es/watermark/index.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/axios/index.d.ts(77,3): error TS1165: A computed property name in an ambient context must refer to an expression whose type is a literal type or a 'unique symbol' type.
+#14 11.75 node_modules/axios/index.d.ts(77,4): error TS2585: 'Symbol' only refers to a type, but is being used as a value here. Do you need to change your target library? Try changing the 'lib' compiler option to es2015 or later.
+#14 11.75 node_modules/axios/index.d.ts(77,24): error TS2304: Cannot find name 'IterableIterator'.
+#14 11.75 node_modules/rc-collapse/es/Collapse.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-dialog/lib/Dialog/Content/Panel.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-dropdown/lib/Dropdown.d.ts(3,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-field-form/es/Form.d.ts(4,59): error TS2503: Cannot find namespace 'JSX'.
+#14 11.75 node_modules/rc-field-form/es/List.d.ts(18,81): error TS2503: Cannot find namespace 'JSX'.
+#14 11.75 node_modules/rc-field-form/lib/Form.d.ts(4,59): error TS2503: Cannot find namespace 'JSX'.
+#14 11.75 node_modules/rc-image/lib/Preview.d.ts(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-input/lib/BaseInput.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-input/lib/Input.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-input/lib/utils/commonUtils.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-mentions/lib/Mentions.d.ts(3,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-notification/lib/interface.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-pagination/lib/Options.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-pagination/lib/Pagination.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-pagination/lib/interface.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-rate/lib/Rate.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-rate/lib/Star.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-select/lib/BaseSelect/index.d.ts(73,29): error TS2503: Cannot find namespace 'JSX'.
+#14 11.75 node_modules/rc-select/lib/BaseSelect/index.d.ts(75,32): error TS2503: Cannot find namespace 'JSX'.
+#14 11.75 node_modules/rc-slider/lib/interface.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-steps/lib/Steps.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-table/lib/Table.d.ts(101,69): error TS2344: Type '<RecordType extends DefaultRecordType>(tableProps: TableProps<RecordType>, ref: Ref<Reference>) => Element' does not satisfy the constraint 'ComponentType<any>'.
+#14 11.75   Type '<RecordType extends DefaultRecordType>(tableProps: TableProps<RecordType>, ref: Ref<Reference>) => Element' is not assignable to type 'FunctionComponent<any>'.
+#14 11.75     Target signature provides too few arguments. Expected 2 or more, but got 1.
+#14 11.75 node_modules/rc-table/lib/interface.d.ts(94,109): error TS2694: Namespace 'React' has no exported member 'ReactHTML'.
+#14 11.75 node_modules/rc-tabs/lib/hooks/useIndicator.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-tabs/lib/interface.d.ts(2,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-tabs/lib/interface.d.ts(14,26): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/rc-tabs/lib/interface.d.ts(27,28): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/rc-textarea/lib/TextArea.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-textarea/lib/interface.d.ts(2,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-tree/lib/DropIndicator.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-tree/lib/TreeNode.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-upload/lib/AjaxUploader.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-upload/lib/Upload.d.ts(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-virtual-list/lib/utils/CacheMap.d.ts(1,13): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 node_modules/rc-virtual-list/lib/utils/CacheMap.d.ts(5,15): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/rc-virtual-list/lib/utils/CacheMap.d.ts(14,18): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router-dom/dist/index.d.ts(1,69): error TS2307: Cannot find module 'react-router/dom' or its corresponding type declarations.
+#14 11.75   There are types at '/app/node_modules/react-router/dist/development/dom-export.d.mts', but this result could not be resolved under your current 'moduleResolution' setting. Consider updating to 'node16', 'nodenext', or 'bundler'.
+#14 11.75 node_modules/react-router/dist/development/fog-of-war-BLArG-qZ.d.ts(489,81): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/fog-of-war-BLArG-qZ.d.ts(490,284): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/index.d.ts(835,43): error TS2304: Cannot find name 'Iterable'.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(292,32): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(297,5): error TS18028: Private identifiers are only available when targeting ECMAScript 2015 and higher.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(931,32): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(989,15): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(993,15): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(1349,30): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(1707,6): error TS2456: Type alias 'Serializable' circularly references itself.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(1709,44): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(1709,78): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(1728,214): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(1728,238): error TS2583: Cannot find name 'Map'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(1728,282): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/react-router/dist/development/route-data-C12CLHiN.d.ts(1728,297): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.75 node_modules/vite/types/hot.d.ts(4,3): error TS1170: A computed property name in a type literal must refer to an expression whose type is a literal type or a 'unique symbol' type.
+#14 11.75 node_modules/vite/types/hot.d.ts(4,4): error TS2585: 'Symbol' only refers to a type, but is being used as a value here. Do you need to change your target library? Try changing the 'lib' compiler option to es2015 or later.
+#14 11.75 src/App.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 src/App.tsx(3,24): error TS6142: Module './components/MainLayout' was resolved to '/app/src/components/MainLayout.tsx', but '--jsx' is not set.
+#14 11.75 src/App.tsx(4,26): error TS6142: Module './components/PaginaPrueba' was resolved to '/app/src/components/PaginaPrueba.tsx', but '--jsx' is not set.
+#14 11.75 src/App.tsx(5,23): error TS6142: Module './components/ScannerQR' was resolved to '/app/src/components/ScannerQR.tsx', but '--jsx' is not set.
+#14 11.75 src/App.tsx(6,22): error TS6142: Module './components/Products' was resolved to '/app/src/components/Products.tsx', but '--jsx' is not set.
+#14 11.75 src/App.tsx(7,27): error TS6142: Module './components/Configuracion' was resolved to '/app/src/components/Configuracion.tsx', but '--jsx' is not set.
+#14 11.75 src/App.tsx(11,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(12,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(13,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(14,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(14,36): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(15,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(15,43): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(17,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(17,45): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(18,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/App.tsx(18,49): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.75 src/components/CardEventos.tsx(6,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(8,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(9,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(10,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(11,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(13,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(17,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(21,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(26,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(28,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(29,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(30,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(31,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(32,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(36,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(37,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.75 src/components/CardEventos.tsx(38,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(39,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(42,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(43,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(44,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(50,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(51,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(52,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(53,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(54,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(58,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(59,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(60,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(61,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(64,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(65,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(66,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(72,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(73,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(74,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(75,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(76,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(80,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(81,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(82,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(83,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(86,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(87,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(88,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(94,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(95,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(96,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(97,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(98,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(101,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(107,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(108,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(109,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(110,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(113,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(114,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(115,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(122,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(123,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(124,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(125,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(126,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(127,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(129,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(130,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(131,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(133,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(134,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(135,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/CardEventos.tsx(138,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/Configuracion.tsx(22,24): error TS2705: An async function or method in ES5 requires the 'Promise' constructor.  Make sure you have a declaration for the 'Promise' constructor or include 'ES2015' in your '--lib' option.
+#14 11.76 src/components/Configuracion.tsx(52,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(53,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(55,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(56,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(57,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(59,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(60,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(63,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(69,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(70,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(71,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(74,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(83,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(84,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(87,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(97,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(98,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(99,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(107,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(111,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(116,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(117,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(124,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(125,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(126,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(131,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(133,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(134,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(138,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(141,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(142,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(146,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Configuracion.tsx(152,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Html5QrScanner.tsx(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/Html5QrScanner.tsx(85,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Html5QrScanner.tsx(86,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/InventoryTable.tsx(54,18): error TS2550: Property 'from' does not exist on type 'ArrayConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.76 src/components/InventoryTable.tsx(54,27): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.76 src/components/InventoryTable.tsx(61,18): error TS2550: Property 'from' does not exist on type 'ArrayConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.76 src/components/InventoryTable.tsx(61,27): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.76 src/components/InventoryTable.tsx(68,18): error TS2550: Property 'from' does not exist on type 'ArrayConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.76 src/components/InventoryTable.tsx(68,27): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.76 src/components/InventoryTable.tsx(75,18): error TS2550: Property 'from' does not exist on type 'ArrayConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.76 src/components/InventoryTable.tsx(75,27): error TS2583: Cannot find name 'Set'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.76 src/components/InventoryTable.tsx(123,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(124,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(139,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(140,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(157,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(174,20): error TS2550: Property 'includes' does not exist on type 'string[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2016' or later.
+#14 11.76 src/components/InventoryTable.tsx(179,12): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(218,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(220,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(221,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(224,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(234,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(235,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(239,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(246,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(247,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(254,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTable.tsx(264,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTableContainer.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/InventoryTableContainer.tsx(3,46): error TS6142: Module './InventoryTable' was resolved to '/app/src/components/InventoryTable.tsx', but '--jsx' is not set.
+#14 11.76 src/components/InventoryTableContainer.tsx(57,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/InventoryTableContainer.tsx(58,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/MainLayout.tsx(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/MainLayout.tsx(3,21): error TS6142: Module './Sidebar' was resolved to '/app/src/components/Sidebar.tsx', but '--jsx' is not set.
+#14 11.76 src/components/MainLayout.tsx(4,20): error TS6142: Module './TopNav' was resolved to '/app/src/components/TopNav.tsx', but '--jsx' is not set.
+#14 11.76 src/components/MainLayout.tsx(12,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/MainLayout.tsx(23,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/MainLayout.tsx(24,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/MainLayout.tsx(25,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/MainLayout.tsx(26,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/MainLayout.tsx(27,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/MainLayout.tsx(28,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/MainLayout.tsx(30,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/Minicards.tsx(22,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(23,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(25,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(26,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(32,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(39,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(40,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(41,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(43,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(44,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(47,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(50,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(54,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(62,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(63,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(69,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(76,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(77,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(78,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(80,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(81,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(84,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(87,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Minicards.tsx(91,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PaginaPrueba.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/PaginaPrueba.tsx(2,23): error TS6142: Module './Minicards' was resolved to '/app/src/components/Minicards.tsx', but '--jsx' is not set.
+#14 11.76 src/components/PaginaPrueba.tsx(3,25): error TS6142: Module './CardEventos' was resolved to '/app/src/components/CardEventos.tsx', but '--jsx' is not set.
+#14 11.76 src/components/PaginaPrueba.tsx(4,32): error TS6142: Module './PreviewPedidosPend' was resolved to '/app/src/components/PreviewPedidosPend.tsx', but '--jsx' is not set.
+#14 11.76 src/components/PaginaPrueba.tsx(9,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PaginaPrueba.tsx(10,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PaginaPrueba.tsx(14,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PaginaPrueba.tsx(15,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PaginaPrueba.tsx(18,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PaginaPrueba.tsx(19,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PaginaPrueba.tsx(22,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PaginaPrueba.tsx(23,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PaginaPrueba.tsx(25,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/PreviewPedidosPend.tsx(80,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(81,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(86,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(93,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(100,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(101,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(102,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(103,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(104,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(106,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(107,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(110,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(115,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(124,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(125,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(126,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(127,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(129,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(130,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(136,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(137,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(138,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(141,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(142,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(143,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(145,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(146,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/PreviewPedidosPend.tsx(150,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/ProductCard.tsx(68,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(72,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(76,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(77,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(81,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(84,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(90,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(91,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(94,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(95,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(95,16): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(96,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(96,16): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(97,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(97,16): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(99,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(100,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(100,20): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(101,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(101,20): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(102,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(102,20): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(106,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(107,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(114,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(115,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ProductCard.tsx(122,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Products.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/Products.tsx(4,37): error TS6142: Module './InventoryTableContainer' was resolved to '/app/src/components/InventoryTableContainer.tsx', but '--jsx' is not set.
+#14 11.76 src/components/Products.tsx(14,32): error TS2705: An async function or method in ES5 requires the 'Promise' constructor.  Make sure you have a declaration for the 'Promise' constructor or include 'ES2015' in your '--lib' option.
+#14 11.76 src/components/Products.tsx(38,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Products.tsx(41,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Products.tsx(42,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Products.tsx(45,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Products.tsx(49,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Products.tsx(54,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Products.tsx(55,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/Profile01.tsx(25,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(31,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(37,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(38,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(39,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(40,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(41,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(42,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(44,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(47,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(50,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(51,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(54,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(57,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(58,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(60,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(65,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(67,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(72,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(76,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(80,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(81,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Profile01.tsx(82,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerArea.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/ScannerArea.tsx(2,28): error TS6142: Module './Html5QrScanner' was resolved to '/app/src/components/Html5QrScanner.tsx', but '--jsx' is not set.
+#14 11.76 src/components/ScannerArea.tsx(3,49): error TS6142: Module './ProductCard' was resolved to '/app/src/components/ProductCard.tsx', but '--jsx' is not set.
+#14 11.76 src/components/ScannerArea.tsx(36,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerArea.tsx(37,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerArea.tsx(44,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerArea.tsx(45,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerQR.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/ScannerQR.tsx(4,25): error TS6142: Module './ScannerArea' was resolved to '/app/src/components/ScannerArea.tsx', but '--jsx' is not set.
+#14 11.76 src/components/ScannerQR.tsx(5,37): error TS6142: Module './InventoryTableContainer' was resolved to '/app/src/components/InventoryTableContainer.tsx', but '--jsx' is not set.
+#14 11.76 src/components/ScannerQR.tsx(6,25): error TS6142: Module './UpdateModal' was resolved to '/app/src/components/UpdateModal.tsx', but '--jsx' is not set.
+#14 11.76 src/components/ScannerQR.tsx(8,30): error TS6142: Module './InventoryTable' was resolved to '/app/src/components/InventoryTable.tsx', but '--jsx' is not set.
+#14 11.76 src/components/ScannerQR.tsx(90,33): error TS2550: Property 'find' does not exist on type 'InventoryRow[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2015' or later.
+#14 11.76 src/components/ScannerQR.tsx(184,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerQR.tsx(186,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerQR.tsx(188,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerQR.tsx(189,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerQR.tsx(194,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerQR.tsx(195,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/ScannerQR.tsx(211,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Sidebar.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.76 src/components/Sidebar.tsx(33,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Sidebar.tsx(43,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.76 src/components/Sidebar.tsx(50,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(53,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(58,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(63,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(75,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(77,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(80,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(85,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(86,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(94,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(96,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(97,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(102,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(103,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(104,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(105,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(110,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(111,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(116,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(117,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(118,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(119,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(124,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(125,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(130,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(131,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(132,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(138,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(140,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(141,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/Sidebar.tsx(148,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/ThemeToggle.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.77 src/components/ThemeToggle.tsx(11,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/ThemeToggle.tsx(16,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/ThemeToggle.tsx(18,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.77 src/components/TopNav.tsx(4,29): error TS6142: Module './ThemeToggle' was resolved to '/app/src/components/ThemeToggle.tsx', but '--jsx' is not set.
+#14 11.77 src/components/TopNav.tsx(5,23): error TS6142: Module './Profile01' was resolved to '/app/src/components/Profile01.tsx', but '--jsx' is not set.
+#14 11.77 src/components/TopNav.tsx(8,26): error TS6142: Module '../contexts/ThemeContext' was resolved to '/app/src/contexts/ThemeContext.tsx', but '--jsx' is not set.
+#14 11.77 src/components/TopNav.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(37,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(38,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(46,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(51,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(53,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(55,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(58,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(65,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(74,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(75,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(79,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(82,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(84,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(85,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(90,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(92,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(97,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/TopNav.tsx(104,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/UpdateModal.tsx(1,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.77 src/components/UpdateModal.tsx(51,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/UpdateModal.tsx(60,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/components/UpdateModal.tsx(61,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/contexts/ThemeContext.tsx(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+#14 11.77 src/contexts/ThemeContext.tsx(34,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/main.tsx(4,17): error TS6142: Module './App' was resolved to '/app/src/App.tsx', but '--jsx' is not set.
+#14 11.77 src/main.tsx(5,31): error TS6142: Module './contexts/ThemeContext' was resolved to '/app/src/contexts/ThemeContext.tsx', but '--jsx' is not set.
+#14 11.77 src/main.tsx(8,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/main.tsx(9,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/main.tsx(10,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/pages/About.tsx(3,12): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/pages/Home.tsx(3,12): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+#14 11.77 src/services/api.ts(3,17): error TS1343: The 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+#14 ERROR: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+------
+ > [build 6/6] RUN npm run build:
+11.77 src/contexts/ThemeContext.tsx(2,8): error TS1259: Module '"/app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+11.77 src/contexts/ThemeContext.tsx(34,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+11.77 src/main.tsx(4,17): error TS6142: Module './App' was resolved to '/app/src/App.tsx', but '--jsx' is not set.
+11.77 src/main.tsx(5,31): error TS6142: Module './contexts/ThemeContext' was resolved to '/app/src/contexts/ThemeContext.tsx', but '--jsx' is not set.
+11.77 src/main.tsx(8,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+11.77 src/main.tsx(9,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+11.77 src/main.tsx(10,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+11.77 src/pages/About.tsx(3,12): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+11.77 src/pages/Home.tsx(3,12): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+11.77 src/services/api.ts(3,17): error TS1343: The 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+------
+Dockerfile:22
+--------------------
+  20 |     # Construimos la aplicación para producción
+  21 |     # npm run build usará .env.production automáticamente
+  22 | >>> RUN npm run build
+  23 |     
+  24 |     # --- Production Stage ---
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+Error: buildx failed with: ERROR: failed to build: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
