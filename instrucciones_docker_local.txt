@@ -1,0 +1,116 @@
+Pasos para ejecutar el proyecto en un entorno Docker local (Windows/Mac)
+=====================================================================
+
+Este documento explica los cambios necesarios para levantar todo el stack de la aplicación (cliente, servidor, Traefik) en tu computadora personal usando Docker.
+
+La diferencia principal con Play with Docker es que ahora accederás a los servicios a través de `localhost` en lugar de un dominio público. Esto simplifica la configuración de red.
+
+---
+### Prerrequisitos
+
+1.  **Instalar Docker Desktop**: Asegúrate de tener Docker Desktop instalado y en ejecución en tu máquina (Windows o Mac). Puedes descargarlo desde el sitio web oficial de Docker.
+
+---
+### Paso 1: Simplificar la configuración de Red (Traefik)
+
+El `docker-compose.yml` actual está configurado para usar HTTPS con Let's Encrypt, lo cual requiere un dominio público y no funcionará en `localhost`. Haremos que Traefik sirva la aplicación a través de HTTP localmente.
+
+1.  **Abre el archivo `traefik/docker-compose.yml`**.
+
+2.  **Modifica los `labels` del servicio `client`**:
+    *   Cambia el `Host` para que apunte a `localhost`.
+    *   Redirige el tráfico al punto de entrada `web` (puerto 80, HTTP) en lugar de `websecure` (puerto 443, HTTPS).
+    *   Comenta o elimina las líneas relacionadas con el `certresolver` de Let's Encrypt.
+
+    **Busca esta sección en el servicio `client`:**
+    ```yaml
+          - "traefik.http.routers.client.rule=Host(`chasu-inventory.duckdns.org`)"
+          - "traefik.http.routers.client.entrypoints=websecure"
+          - "traefik.http.routers.client.tls.certresolver=myresolver"
+    ```
+
+    **Y reemplázala con esto:**
+    ```yaml
+          - "traefik.http.routers.client.rule=Host(`localhost`)"
+          - "traefik.http.routers.client.entrypoints=web"
+    ```
+
+3.  **Modifica los `labels` del servicio `server`**:
+    *   Haz el mismo cambio que en el cliente para que el backend responda en `localhost` a través de HTTP.
+
+    **Busca esta sección en el servicio `server`:**
+    ```yaml
+          - "traefik.http.routers.server.rule=Host(`chasu-inventory.duckdns.org`) && PathPrefix(`/api`)"
+          - "traefik.http.routers.server.entrypoints=websecure"
+          - "traefik.http.routers.server.tls.certresolver=myresolver"
+    ```
+
+    **Y reemplázala con esto:**
+    ```yaml
+          - "traefik.http.routers.server.rule=Host(`localhost`) && PathPrefix(`/api`)"
+          - "traefik.http.routers.server.entrypoints=web"
+    ```
+
+4. **Comenta la redirección a HTTPS en el servicio `traefik`**:
+   Busca y comenta (poniendo un `#` al inicio) la linea que define el middleware de redirección a https.
+
+    **Busca esta sección en el servicio `traefik`:**
+    ```yaml
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+    ```
+    **Y comentala de esta forma:**
+    ```yaml
+      # - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      # - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+    ```
+
+
+---
+### Paso 2: Asegurar que la URL de la API en el Cliente sea correcta
+
+El cliente (React) necesita saber dónde contactar al servidor (API). La configuración que hicimos previamente para que apunte a `/api` es la correcta, ya que Traefik se encargará de redirigir la petición. Solo verifica que los archivos de entorno estén así:
+
+1.  **Abre el archivo `client/.env.development`**.
+2.  Asegúrate de que la variable de entorno `VITE_API_URL` esté definida como una ruta relativa.
+    ```
+    VITE_API_URL=/api
+    ```
+
+3.  **Abre el archivo `client/.env.production`**.
+4.  Asegúrate de que tenga la misma configuración.
+    ```
+    VITE_API_URL=/api
+    ```
+
+---
+### Paso 3: Construir y Ejecutar los Contenedores
+
+Ahora que la configuración está lista para un entorno local, puedes levantar todo.
+
+1.  Abre una terminal o PowerShell.
+2.  Navega hasta la carpeta `traefik`:
+    ```sh
+    cd traefik
+    ```
+3.  Ejecuta el siguiente comando para construir las imágenes (si es necesario) y levantar los servicios en segundo plano:
+    ```sh
+    docker-compose up --build -d
+    ```
+    *   `--build`: Fuerza la reconstrucción de las imágenes para aplicar los cambios de los Dockerfiles.
+    *   `-d`: (Detached) Ejecuta los contenedores en segundo plano.
+
+---
+### Paso 4: Acceder a la Aplicación
+
+Una vez que los contenedores estén en ejecución, podrás acceder a la aplicación desde tu navegador:
+
+*   **Frontend (Aplicación web)**: Abre tu navegador y ve a **`http://localhost`**.
+    *   *Nota: Usa `http` y no `httpses`*.
+
+*   **Backend (API)**: La API estará disponible en **`http://localhost/api`**. Puedes usar herramientas como Postman o Insomnia para probar los endpoints si lo necesitas (ej: `http://localhost/api/productos`).
+
+---
+### Resumen
+
+Al seguir estos pasos, habrás adaptado el proyecto para que se ejecute completamente en tu máquina local. La clave fue eliminar la dependencia de un dominio público y Let's Encrypt, simplificando la configuración de Traefik para que todo funcione a través de `localhost` con HTTP.
